@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react';
 function Form(props){
     const [user, setUser] = useState({
         name: "",
-        email: "email",
+        email: "",
         phoneNumber: "",
         phoneType: "",
         position: "",
@@ -30,7 +30,8 @@ function Form(props){
                 <input type="text" placeholder='Name' onChange={handleChange('name')}></input>
                 <input type="text" placeholder='Email' onChange={handleChange('email')}></input>
                 <input type="text" placeholder='Phone Number' onChange={handleChange('phoneNumber')}></input>
-                <select value="{phoneType.value}" placeholder="Phone Type" onChange={handleChange('phoneType')}>
+                <select value={user.phoneType} onChange={handleChange('phoneType')}>
+                    <option value="" disabled>Select Phone</option>
                     <option value='cell'>Cell</option>
                     <option value='home'>Home</option>
                     <option value='work'>Work</option>
